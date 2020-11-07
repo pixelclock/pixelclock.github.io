@@ -1,0 +1,22 @@
+<div class="piexl-container">
+  <div class="pixel-block-container">
+    <svg width="290" height="130">
+      <g transform="translate(4, -10)">
+        <g
+          *ngFor="let block of rows; index as r"
+          [attr.transform]="getTransform(r)"
+        >
+          <rect
+            *ngFor="let block of colums; index as c"
+            class="pixel"
+            [attr.width]="piexlSize"
+            [attr.height]="piexlSize"
+            [attr.x]="c * offset"
+            y="15"
+            fill="var(--color-pixel-block-bg)"
+          ></rect>
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>

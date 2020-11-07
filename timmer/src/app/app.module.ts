@@ -5,10 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PiexlComponent } from './piexl/piexl.component';
+import { TimeComponent } from './time/time.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent,
+    PiexlComponent,
+    TimeComponent
   ],
   imports: [
     BrowserModule,
