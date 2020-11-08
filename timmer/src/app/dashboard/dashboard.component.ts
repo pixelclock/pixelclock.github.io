@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -15,6 +15,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   sec = '00';
   sub = new Subscription();
 
+  @ViewChild('container', { static: true }) container: ElementRef;
+
   constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
@@ -28,6 +30,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
       })
     ).subscribe();
     this.sub.add(timeSub);
+
+    console.log(this.container.nativeElement.clientHeight)
   }
 
   ngOnDestroy(): void {

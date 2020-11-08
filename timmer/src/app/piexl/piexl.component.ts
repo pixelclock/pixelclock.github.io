@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { dataMap } from './data.map';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { dataMap, colorMap } from '../core/data.map';
 @Component({
   selector: 'app-piexl',
   templateUrl: './piexl.component.html',
@@ -15,6 +15,7 @@ export class PiexlComponent implements OnInit {
 
   @Input() value = 0;
   @Input() sec = '000000';
+  @Input() fillColor = '#616161';
 
   constructor() { }
 
@@ -32,7 +33,7 @@ export class PiexlComponent implements OnInit {
 
     const rule = dataMap[this.value];
 
-    return rule(row, column) ? '#616161' : '#fafafa';
+    return rule(row, column) ? this.fillColor : '#fafafa';
   }
 
 }
