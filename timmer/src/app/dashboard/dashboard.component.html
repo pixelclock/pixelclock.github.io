@@ -1,8 +1,8 @@
 <div class="clock-container">
   <div class="hour-container">
-    <app-time></app-time>
+    <app-time [value]="hour"></app-time>
   </div>
   <div class="min-container">
-    <app-time></app-time>
+    <app-time [value]="min" [sec]="sec"></app-time>
   </div>
 </div>

@@ -7,13 +7,13 @@
           [attr.transform]="getTransform(r)"
         >
           <rect
-            *ngFor="let block of colums; index as c"
+            *ngFor="let block of columns; index as c"
             class="pixel"
             [attr.width]="piexlSize"
             [attr.height]="piexlSize"
             [attr.x]="c * offset"
             y="15"
-            fill="var(--color-pixel-block-bg)"
+            [attr.fill]="getFillColor(r, c)"
           ></rect>
         </g>
       </g>
