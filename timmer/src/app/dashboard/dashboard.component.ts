@@ -24,7 +24,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
         this.hour = ('' + date.getHours()).padStart(2, '0');
         this.min = ('' + date.getMinutes()).padStart(2, '0');
         this.sec = date.getSeconds().toString(2).padStart(6, '0');
-        console.log(this.hour, this.min, this.sec);
         this.cdr.detectChanges();
       })
     ).subscribe();

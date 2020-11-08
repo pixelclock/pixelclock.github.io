@@ -26,8 +26,6 @@ export class PiexlComponent implements OnInit {
   }
 
   getFillColor(row: number, column: number): string {
-    console.log(this.value);
-
     if (column === 0) {
       return this.sec[row] === '1' ? '#81c784' : '#fafafa';
     }
